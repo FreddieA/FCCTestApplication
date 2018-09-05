@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TextFieldTableCell" id="pzU-qA-vpn" customClass="TextFieldTableCell" customModule="FCCTestApplication" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pzU-qA-vpn" id="ciu-ix-s1W">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number of points" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PAh-uq-iYc">
+                        <rect key="frame" x="8" y="8" width="359" height="26"/>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="PAh-uq-iYc" firstAttribute="centerX" secondItem="ciu-ix-s1W" secondAttribute="centerX" id="ZlF-cr-uto"/>
+                    <constraint firstAttribute="trailing" secondItem="PAh-uq-iYc" secondAttribute="trailing" constant="8" id="nSV-Xi-dUl"/>
+                    <constraint firstItem="PAh-uq-iYc" firstAttribute="top" secondItem="ciu-ix-s1W" secondAttribute="top" constant="8" id="pmE-Cu-UUs"/>
+                    <constraint firstItem="PAh-uq-iYc" firstAttribute="centerY" secondItem="ciu-ix-s1W" secondAttribute="centerY" id="yOA-DE-M1o"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="textField" destination="PAh-uq-iYc" id="h8r-mB-gYj"/>
+            </connections>
+            <point key="canvasLocation" x="-8" y="3"/>
+        </tableViewCell>
+    </objects>
+</document>

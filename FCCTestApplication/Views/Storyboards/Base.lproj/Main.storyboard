@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kQb-Mc-E1b">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Mock View Controller-->
+        <scene sceneID="6mQ-1D-SPw">
+            <objects>
+                <tableViewController storyboardIdentifier="MockViewController" id="bLu-d1-eSj" customClass="MockViewController" customModule="FCCTestApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aLF-le-xTp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="bLu-d1-eSj" id="maS-Ah-xFl"/>
+                            <outlet property="delegate" destination="bLu-d1-eSj" id="ySS-aB-nZX"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="SVw-zE-qj6"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jcq-GR-rdn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="721" y="83"/>
+        </scene>
+        <!--Points View Controller-->
+        <scene sceneID="Zjh-Pt-88U">
+            <objects>
+                <tableViewController storyboardIdentifier="PointsViewController" id="MrU-vg-htQ" customClass="PointsViewController" customModule="FCCTestApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Cng-GP-EF4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <outlet property="dataSource" destination="MrU-vg-htQ" id="WJ8-9E-HyC"/>
+                            <outlet property="delegate" destination="MrU-vg-htQ" id="wtJ-lA-IR8"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AIJ-M9-65e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1442" y="82"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="L06-Rp-Gu1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kQb-Mc-E1b" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ejn-LA-SRt">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bLu-d1-eSj" kind="relationship" relationship="rootViewController" id="HIT-e5-TTK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8mN-qm-fUD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="232.80000000000001" y="83.208395802098963"/>
+        </scene>
+    </scenes>
+</document>
