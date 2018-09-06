@@ -22,26 +22,20 @@ class PointsViewController: UITableViewController {
     init(_ testCase: TestCase) {
         service = DataPointsService(testCase)
         super.init(style: .plain)
+        service.addListener(observer: self, selector: #selector(didRecievePointsUpdate(notification:)))
     }
     
     required init?(coder aDecoder: NSCoder) {
         service = DataPointsService()
         super.init(coder: aDecoder)
+        service.addListener(observer: self, selector: #selector(didRecievePointsUpdate(notification:)))
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.estimatedRowHeight = 100
-        
-        let graphFrame = CGRect(origin: .zero, size: CGSize(width: self.view.bounds.width, height: self.view.bounds.width / 2))
-        chartView = ChartView(frame: graphFrame.offsetBy(dx: -10, dy: -10))
-        chartView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        tableView.tableFooterView = chartView
-        
+        customizeTable()
         fillStaticDataSource()
-        
-        service.addListener(observer: self, selector: #selector(didRecievePointsUpdate(notification:)))
     }
     
     @objc func didRecievePointsUpdate(notification: Notification) {
@@ -59,6 +53,15 @@ class PointsViewController: UITableViewController {
         let alert = UIAlertController.init(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
         alert.addAction(UIAlertAction.init(title: "OK", style: .default))
         self.present(alert, animated: true)
+    }
+    
+    private func customizeTable() {
+        tableView.estimatedRowHeight = 44
+        
+        let graphFrame = CGRect(origin: .zero, size: CGSize(width: self.view.bounds.width, height: self.view.bounds.width / 2))
+        chartView = ChartView(frame: graphFrame.offsetBy(dx: -10, dy: -10))
+        chartView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        tableView.tableFooterView = chartView
     }
     
     private func fillStaticDataSource() {
